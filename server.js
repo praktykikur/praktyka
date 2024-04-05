@@ -13,7 +13,7 @@ module.exports = {
             console.log("Connected");
         
             //let sql = "SELECT * FROM logowanie";
-            connection.query("INSERT INTO praktyki SET ?", {imie:req.imie, nazwisko:req.nazwisko}, function(err, res){
+            connection.query("INSERT INTO praktyki SET ?", {imie:req.imie, nazwisko:req.nazwisko, kod_pocztowy:req.kodpocztowy}, function(err, res){
                 if (err){
                     console.log("NIE OK", err);
                     return cb(err);
