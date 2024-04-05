@@ -18,7 +18,7 @@ module.exports = {
                 nazwisko:req.nazwisko,
                 kodpocztowy:req.kodpocztowy,
                 miasto:req.miasto,
-                woj:req.wojewodztwo,
+                woj:req.woj,
                 powiat:req.powiat,
                 gmina:req.gmina,
                 ulica:req.ulica,
