@@ -8,15 +8,18 @@ const script = {
         const powiat = document.querySelector('input[name="powiat"]').value;
         const gmina = document.querySelector('input[name="gmina"]').value;
         const ulica = document.querySelector('input[name="ulica"]').value;
-        const nr_domu = document.querySelector('input[name="nrdomu"]').value;
-        const nr_lokalu = document.querySelector('input[name="nrlokalu"]').value;
+        const nrdomu = document.querySelector('input[name="nrdomu"]').value;
+        const nrlokalu = document.querySelector('input[name="nrlokalu"]').value;
         const telefon = document.querySelector('input[name="telefon"]').value;
         const email = document.querySelector('input[name="email"]').value;
-        const PESEL = document.querySelector('input[name="pesel"]').value;
-        const rachunek = document.querySelector('input[name="rachunek"]').value;
+        const pesel = document.querySelector('input[name="pesel"]').value;
+        const nrkonta = document.querySelector('input[name="rachunek"]').value;
         const klasa = document.querySelector('input[name="klasa"]').value;
-        const kierunek_zaw = document.querySelector('input[name="kierunek_zaw"]').value;
-        const miejsce_praktyk = document.querySelector('input[name="miejsce_praktyk"]').value;
+        const kierunek = document.querySelector('input[name="kierunek_zaw"]').value;
+        const miejscepraktyk = document.querySelector('input[name="miejsce_praktyk"]').value;
+
+        const plec = document.querySelector('input[name="radioGen"]').value;
+        const niepelnosprawnosc = document.querySelector('input[name="radioDis"]').value;
 
         const formData = {
             imie: imie,
@@ -27,15 +30,17 @@ const script = {
             powiat: powiat,
             gmina: gmina,
             ulica: ulica,
-            nr_domu: nr_domu,
-            nr_lokalu: nr_lokalu,
+            nrdomu: nrdomu,
+            nrlokalu: nrlokalu,
             telefon: telefon,
             email: email,
-            PESEL: PESEL,
-            rachunek: rachunek,
+            pesel: pesel,
+            nrkonta: nrkonta,
             klasa: klasa,
-            kierunek_zaw: kierunek_zaw,
-            miejsce_praktyk: miejsce_praktyk // Dodane brakujące pole
+            kierunek: kierunek,
+            miejscepraktyk: miejscepraktyk,
+            plec:plec,
+            niepelnosprawnosc:niepelnosprawnosc
         };
 
         fetch('/test', {
