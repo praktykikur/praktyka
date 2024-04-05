@@ -18,8 +18,23 @@ const script = {
         const kierunek = document.querySelector('input[name="kierunek_zaw"]').value;
         const miejscepraktyk = document.querySelector('input[name="miejsce_praktyk"]').value;
 
-        const plec = document.querySelector('input[name="radioGen"]').value;
-        const niepelnosprawnosc = document.querySelector('input[name="radioDis"]').value;
+        var plecRadio = document.getElementsByName('radioGen')
+        for (var i = 0; i < 4; i++) {
+            if (plecRadio[i].checked) {
+                // Jeśli element jest zaznaczony, pobieramy jego wartość i przerywamy pętlę
+                var selectedValuePlec = plecRadio[i].value;
+                break;
+            }
+        }
+
+        var niepelnosprawnoscRadio = document.getElementsByName('radioDis');
+        for (var i = 0; i < 3; i++) {
+            if (niepelnosprawnoscRadio[i].checked) {
+                // Jeśli element jest zaznaczony, pobieramy jego wartość i przerywamy pętlę
+                var selectedValueNiepelnosprawnosc = niepelnosprawnoscRadio[i].value;
+                break;
+            }
+        }
 
         const formData = {
             imie: imie,
@@ -39,8 +54,8 @@ const script = {
             klasa: klasa,
             kierunek: kierunek,
             miejscepraktyk: miejscepraktyk,
-            plec:plec,
-            niepelnosprawnosc:niepelnosprawnosc
+            plec:selectedValuePlec,
+            niepelnosprawnosc:selectedValueNiepelnosprawnosc
         };
 
         fetch('/test', {

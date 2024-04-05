@@ -30,7 +30,9 @@ module.exports = {
                 nrkonta:req.nrkonta, 
                 miejscepraktyk:req.miejscepraktyk, 
                 klasa:req.klasa, 
-                kierunek:req.kierunek}, function(err, res){
+                kierunek:req.kierunek,
+                plec:req.plec,
+                niepelnosprawnosc:req.niepelnosprawnosc}, function(err, res){
                 if (err){
                     console.log("NIE OK", err);
                     return cb(err);
