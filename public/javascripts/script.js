@@ -100,7 +100,7 @@ const script = {
             emptyFields.push("Email");
         }
         if (script.isEmpty(pesel)) {
-            emptyFields.push("PESEL");
+            emptyFields.push("PESEL");//d
         }
         if (script.isEmpty(nrkonta)) {
             emptyFields.push("Numer konta");
