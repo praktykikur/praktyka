@@ -133,7 +133,7 @@ const script = {
         if (!script.isEmpty(imie) && !script.isEmpty(nazwisko) && !script.isEmpty(kodpocztowy) && !script.isEmpty(miasto) && !script.isEmpty(woj) && !script.isEmpty(powiat) && !script.isEmpty(gmina) && !script.isEmpty(ulica)
          && !script.isEmpty(ulica) && !script.isEmpty(nrdomu) && !script.isEmpty(nrlokalu) && !script.isEmpty(telefon) && !script.isEmpty(email) && !script.isEmpty(pesel) && !script.isEmpty(nrkonta) && !script.isEmpty(klasa)
          && !script.isEmpty(klasa) && !script.isEmpty(kierunek) && !script.isEmpty(miejscepraktyk)) {
-            if (!c1 && !c2 && !c3 && !c4 && !c5 && !c6) {
+            if (!c1 || !c2 || !c3 || !c4 || !c5 || !c6) {
                 alert("Zaznacz wszystkie checkboxy");
             }
             else {
