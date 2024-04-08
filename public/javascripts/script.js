@@ -78,6 +78,6 @@ const script = {
             console.error('Wystąpił błąd podczas wysyłania danych formularza:', error);
         });
 
-        preventDeafult();
+        window.location.reload();
     }
 }

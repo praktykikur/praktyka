@@ -11,7 +11,7 @@ block content
     h7(class="fst-italic") Realizator zobowiązuje się do zapewnienia <strong> poufności danych osobowych </strong> przetwarzanych w związku z realizacją projektu, w szczególności do tego, że nie będzie przekazywać, ujawniać i udostępniać tych danych osobom nieuprawnionym.
 
   div(class="text-start")
-    form(action="/" method="post" id="form")
+    form(method="post")
       div(class="col-xs-1 p-3")
         label(class="form-label text-start fw-bold") Imię
         label(class="text-danger") *
@@ -26,10 +26,10 @@ block content
 
       div(class="d-flex flex-row")
         div(class="col-xs-1 p-3")
-          label(class="form-label text-start fw-bold" ) Kod Pocztowy
+          label(class="form-label text-start fw-bold") Kod Pocztowy
           label(class="text-danger") *
           div
-            input(type="text" name="kodpocztowy" pattern="" class="form-control" required)
+            input(type="text" name="kodpocztowy" pattern="^\s*?\d{5}(?:[-\s]\d{4})?\s*?$" class="form-control")
 
         div(class="col-xs-1 p-3")
           label(class="form-label text-start fw-bold") Miejscowość
@@ -41,64 +41,64 @@ block content
         label(class="form-label text-start fw-bold") Województwo
         label(class="text-danger") *
         div
-          input(type="text" name="woj" class="form-control" required)
+          input(type="text" name="woj" class="form-control")
       
       div(class="col-xs-1 p-3")
         label(class="form-label text-start fw-bold") Powiat
         label(class="text-danger") *
         div
-          input(type="text" name="powiat" class="form-control" required)
+          input(type="text" name="powiat" class="form-control")
       
       div(class="col-xs-1 p-3")
         label(class="form-label text-start fw-bold") Gmina
         label(class="text-danger") *
         div
-          input(type="text" name="gmina" class="form-control" required)
+          input(type="text" name="gmina" class="form-control")
       
       div(class="d-flex flex-row")
         div(class="col-xs-1 p-3")
           label(class="form-label text-start fw-bold") Ulica
           label(class="text-danger") *
           div
-            input(type="text" name="ulica" class="form-control" required)
+            input(type="text" name="ulica" class="form-control")
         div(class="col-xs-1 p-3")
           label(class="form-label text-start fw-bold") Nr domu
           div
-            input(type="number" name="nrdomu" class="form-control" required)
+            input(type="number" name="nrdomu" class="form-control")
         div(class="col-xs-1 p-3")
           label(class="form-label text-start fw-bold") Nr lokalu
           div
-            input(type="number" name="nrlokalu" class="form-control" required)
+            input(type="number" name="nrlokalu" class="form-control")
       
       div(class="col-xs-1 p-3")
         label(class="form-label text-start fw-bold") Telefon
         label(class="text-danger") *
         div
-          input(type="number" name="telefon" class="form-control" max-length="9" required)
+          input(type="number" name="telefon" class="form-control" max-length="9")
       
       div(class="col-xs-1 p-3")
         label(class="form-label text-start fw-bold") E-mail
         label(class="text-danger") *
         div
-          input(type="text" name="email" class="form-control" required)
+          input(type="text" name="email" class="form-control")
       
       div(class="col-xs-1 p-3")
         label(class="form-label text-start fw-bold") PESEL
         label(class="text-danger") *
         div
-          input(type="number" name="pesel" class="form-control" required)
+          input(type="number" name="pesel" class="form-control")
       
       div(class="col-xs-1 p-3")
         label(class="form-label text-start fw-bold") Numer rachunku bankowego
         label(class="text-danger") *
         div
-          input(type="text" name="rachunek" class="form-control" required)
+          input(type="text" name="rachunek" class="form-control")
 
       div(class="col-xs-1 p-3")
         label(class="form-label text-start  fw-bold") Klasa
         label(class="text-danger") *
         div
-          input(type="text" name="klasa" class="form-control" required)
+          input(type="text" name="klasa" class="form-control")
 
       div(class="col-xs-1 p-3")
         label(class="form-label text-start fw-bold") Kierunek zawodowy
@@ -106,7 +106,7 @@ block content
         div
           h7(class="fst-italic") np.: technik informatyk, technik logistyk, technik mechatronik, technik analityk, itp.
         div
-          input(type="text" name="kierunek_zaw" class="form-control" required)
+          input(type="text" name="kierunek_zaw" class="form-control")
 
       div(class="col-xs-1 p-3")
         label(class="form-label text-start fw-bold") Proponowane miejsce stażu
@@ -191,4 +191,4 @@ block content
         label(class="text-danger") *
 
       div(align="right")
-        input(class="btn btn-primary mt-2" type="submit" id="wyslij" value="Zapisz i wyślij" onclick="script.test()")
+        button(class="btn btn-primary mt-2" type="button" id="wyslij" value="Zapisz i wyślij" onclick="script.test()")
