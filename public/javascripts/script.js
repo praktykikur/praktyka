@@ -21,6 +21,16 @@ const script = {
         const kierunek = document.querySelector('input[name="kierunek_zaw"]').value;
         const miejscepraktyk = document.querySelector('input[name="miejsce_praktyk"]').value;
 
+        const c1 = document.querySelector("input[class='c1']").checked;
+        const c2 = document.querySelector("input[class='c2']").checked;
+        const c3 = document.querySelector("input[class='c3']").checked;
+        const c4 = document.querySelector("input[class='c4']").checked;
+        const c5 = document.querySelector("input[class='c5']").checked;
+        const c6 = document.querySelector("input[class='c6']").checked;
+
+        
+        
+
         var plecRadio = document.getElementsByName('radioGen')
         for (var i = 0; i < 4; i++) {
             if (plecRadio[i].checked) {
@@ -123,27 +133,32 @@ const script = {
         if (!script.isEmpty(imie) && !script.isEmpty(nazwisko) && !script.isEmpty(kodpocztowy) && !script.isEmpty(miasto) && !script.isEmpty(woj) && !script.isEmpty(powiat) && !script.isEmpty(gmina) && !script.isEmpty(ulica)
          && !script.isEmpty(ulica) && !script.isEmpty(nrdomu) && !script.isEmpty(nrlokalu) && !script.isEmpty(telefon) && !script.isEmpty(email) && !script.isEmpty(pesel) && !script.isEmpty(nrkonta) && !script.isEmpty(klasa)
          && !script.isEmpty(klasa) && !script.isEmpty(kierunek) && !script.isEmpty(miejscepraktyk)) {
-            fetch('/test', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(formData)
-            })
-            .then(response => {
-                if (response) { // Sprawdzamy, czy status odpowiedzi jest w zakresie 200-299
-                    console.log('Dane formularza zostały wysłane pomyślnie!');
-                } else {
-                    console.error('Wysłanie danych formularza nie powiodło się.');
-                }
-                console.log(response)
-                console.log(imie, nazwisko);
-            })
-            .catch(error => {
-                console.error('Wystąpił błąd podczas wysyłania danych formularza:', error);
-            });
+            if (!c1 && !c2 && !c3 && !c4 && !c5 && !c6) {
+                alert("Zaznacz wszystkie checkboxy");
+            }
+            else {
+                fetch('/test', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(formData)
+                })
+                .then(response => {
+                    if (response) { // Sprawdzamy, czy status odpowiedzi jest w zakresie 200-299
+                        console.log('Dane formularza zostały wysłane pomyślnie!');
+                    } else {
+                        console.error('Wysłanie danych formularza nie powiodło się.');
+                    }
+                    console.log(response)
+                    console.log(imie, nazwisko);
+                })
+                .catch(error => {
+                    console.error('Wystąpił błąd podczas wysyłania danych formularza:', error);
+                });
 
-            window.location.reload();
+                window.location.reload();
+            }
+            }
         }
     }
-}
