@@ -11,7 +11,7 @@ block content
     h7(class="fst-italic") Realizator zobowiązuje się do zapewnienia <strong> poufności danych osobowych </strong> przetwarzanych w związku z realizacją projektu, w szczególności do tego, że nie będzie przekazywać, ujawniać i udostępniać tych danych osobom nieuprawnionym.
 
   div(class="text-start")
-    form(action="" method="post")
+    form(action="/" method="post" id="form")
       div(class="col-xs-1 p-3")
         label(class="form-label text-start fw-bold") Imię
         label(class="text-danger") *
@@ -191,4 +191,4 @@ block content
         label(class="text-danger") *
 
       div(align="right")
-           button(buttonType="button" class="btn btn-primary mt-2") Zapisz i wyślij
+        input(class="btn btn-primary mt-2" type="submit" id="wyslij" value="Zapisz i wyślij" onclick="script.test()")

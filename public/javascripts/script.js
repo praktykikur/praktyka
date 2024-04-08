@@ -77,5 +77,7 @@ const script = {
         .catch(error => {
             console.error('Wystąpił błąd podczas wysyłania danych formularza:', error);
         });
+
+        preventDeafult();
     }
 }
