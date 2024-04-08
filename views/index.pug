@@ -26,10 +26,10 @@ block content
 
       div(class="d-flex flex-row")
         div(class="col-xs-1 p-3")
-          label(class="form-label text-start fw-bold") Kod Pocztowy
+          label(class="form-label text-start fw-bold" ) Kod Pocztowy
           label(class="text-danger") *
           div
-            input(type="text" name="kodpocztowy" pattern="^\s*?\d{5}(?:[-\s]\d{4})?\s*?$" class="form-control")
+            input(type="text" name="kodpocztowy" pattern="" class="form-control" required)
 
         div(class="col-xs-1 p-3")
           label(class="form-label text-start fw-bold") Miejscowość
@@ -41,64 +41,64 @@ block content
         label(class="form-label text-start fw-bold") Województwo
         label(class="text-danger") *
         div
-          input(type="text" name="woj" class="form-control")
+          input(type="text" name="woj" class="form-control" required)
       
       div(class="col-xs-1 p-3")
         label(class="form-label text-start fw-bold") Powiat
         label(class="text-danger") *
         div
-          input(type="text" name="powiat" class="form-control")
+          input(type="text" name="powiat" class="form-control" required)
       
       div(class="col-xs-1 p-3")
         label(class="form-label text-start fw-bold") Gmina
         label(class="text-danger") *
         div
-          input(type="text" name="gmina" class="form-control")
+          input(type="text" name="gmina" class="form-control" required)
       
       div(class="d-flex flex-row")
         div(class="col-xs-1 p-3")
           label(class="form-label text-start fw-bold") Ulica
           label(class="text-danger") *
           div
-            input(type="text" name="ulica" class="form-control")
+            input(type="text" name="ulica" class="form-control" required)
         div(class="col-xs-1 p-3")
           label(class="form-label text-start fw-bold") Nr domu
           div
-            input(type="number" name="nrdomu" class="form-control")
+            input(type="number" name="nrdomu" class="form-control" required)
         div(class="col-xs-1 p-3")
           label(class="form-label text-start fw-bold") Nr lokalu
           div
-            input(type="number" name="nrlokalu" class="form-control")
+            input(type="number" name="nrlokalu" class="form-control" required)
       
       div(class="col-xs-1 p-3")
         label(class="form-label text-start fw-bold") Telefon
         label(class="text-danger") *
         div
-          input(type="number" name="telefon" class="form-control" max-length="9")
+          input(type="number" name="telefon" class="form-control" max-length="9" required)
       
       div(class="col-xs-1 p-3")
         label(class="form-label text-start fw-bold") E-mail
         label(class="text-danger") *
         div
-          input(type="text" name="email" class="form-control")
+          input(type="text" name="email" class="form-control" required)
       
       div(class="col-xs-1 p-3")
         label(class="form-label text-start fw-bold") PESEL
         label(class="text-danger") *
         div
-          input(type="number" name="pesel" class="form-control")
+          input(type="number" name="pesel" class="form-control" required)
       
       div(class="col-xs-1 p-3")
         label(class="form-label text-start fw-bold") Numer rachunku bankowego
         label(class="text-danger") *
         div
-          input(type="text" name="rachunek" class="form-control")
+          input(type="text" name="rachunek" class="form-control" required)
 
       div(class="col-xs-1 p-3")
         label(class="form-label text-start  fw-bold") Klasa
         label(class="text-danger") *
         div
-          input(type="text" name="klasa" class="form-control")
+          input(type="text" name="klasa" class="form-control" required)
 
       div(class="col-xs-1 p-3")
         label(class="form-label text-start fw-bold") Kierunek zawodowy
@@ -106,7 +106,7 @@ block content
         div
           h7(class="fst-italic") np.: technik informatyk, technik logistyk, technik mechatronik, technik analityk, itp.
         div
-          input(type="text" name="kierunek_zaw" class="form-control")
+          input(type="text" name="kierunek_zaw" class="form-control" required)
 
       div(class="col-xs-1 p-3")
         label(class="form-label text-start fw-bold") Proponowane miejsce stażu
