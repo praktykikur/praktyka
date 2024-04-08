@@ -61,6 +61,65 @@ const script = {
             niepelnosprawnosc:selectedValueNiepelnosprawnosc
         };
 
+        var emptyFields = [];
+
+        if (script.isEmpty(imie)) {
+            emptyFields.push("Imię");
+        }
+        if (script.isEmpty(nazwisko)) {
+            emptyFields.push("Nazwisko");
+        }
+        if (script.isEmpty(kodpocztowy)) {
+            emptyFields.push("Kod pocztowy");
+        }
+        if (script.isEmpty(miasto)) {
+            emptyFields.push("Miasto");
+        }
+        if (script.isEmpty(woj)) {
+            emptyFields.push("Województwo");
+        }
+        if (script.isEmpty(powiat)) {
+            emptyFields.push("Powiat");
+        }
+        if (script.isEmpty(gmina)) {
+            emptyFields.push("Gmina");
+        }
+        if (script.isEmpty(ulica)) {
+            emptyFields.push("Ulica");
+        }
+        if (script.isEmpty(nrdomu)) {
+            emptyFields.push("Numer domu");
+        }
+        if (script.isEmpty(nrlokalu)) {
+            emptyFields.push("Numer lokalu");
+        }
+        if (script.isEmpty(telefon)) {
+            emptyFields.push("Telefon");
+        }
+        if (script.isEmpty(email)) {
+            emptyFields.push("Email");
+        }
+        if (script.isEmpty(pesel)) {
+            emptyFields.push("PESEL");
+        }
+        if (script.isEmpty(nrkonta)) {
+            emptyFields.push("Numer konta");
+        }
+        if (script.isEmpty(klasa)) {
+            emptyFields.push("Klasa");
+        }
+        if (script.isEmpty(kierunek)) {
+            emptyFields.push("Kierunek zawodowy");
+        }
+        if (script.isEmpty(miejscepraktyk)) {
+            emptyFields.push("Miejsce praktyk zawodowych");
+        }
+
+        if (emptyFields.length > 0) {
+            alert("Uzupełnij brakujące pola: " + emptyFields.join(", "));
+            return;
+        }
+
         if (!script.isEmpty(imie) && !script.isEmpty(nazwisko) && !script.isEmpty(kodpocztowy) && !script.isEmpty(miasto) && !script.isEmpty(woj) && !script.isEmpty(powiat) && !script.isEmpty(gmina) && !script.isEmpty(ulica)
          && !script.isEmpty(ulica) && !script.isEmpty(nrdomu) && !script.isEmpty(nrlokalu) && !script.isEmpty(telefon) && !script.isEmpty(email) && !script.isEmpty(pesel) && !script.isEmpty(nrkonta) && !script.isEmpty(klasa)
          && !script.isEmpty(klasa) && !script.isEmpty(kierunek) && !script.isEmpty(miejscepraktyk)) {
@@ -85,8 +144,6 @@ const script = {
             });
 
             window.location.reload();
-        } else {
-            alert("Uzupełnij brakujące pola!");
         }
     }
 }
