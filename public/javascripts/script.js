@@ -1,4 +1,7 @@
 const script = {
+    isEmpty:(str) => {
+        return (!str || str.trim() === '');
+    },
     test:() => {
         const imie = document.querySelector('input[name="imie"]').value;
         const nazwisko = document.querySelector('input[name="nazwisko"]').value;
@@ -58,26 +61,32 @@ const script = {
             niepelnosprawnosc:selectedValueNiepelnosprawnosc
         };
 
-        fetch('/test', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(formData)
-        })
-        .then(response => {
-            if (response) { // Sprawdzamy, czy status odpowiedzi jest w zakresie 200-299
-                console.log('Dane formularza zostały wysłane pomyślnie!');
-            } else {
-                console.error('Wysłanie danych formularza nie powiodło się.');
-            }
-            console.log(response)
-            console.log(imie, nazwisko);
-        })
-        .catch(error => {
-            console.error('Wystąpił błąd podczas wysyłania danych formularza:', error);
-        });
+        if (!script.isEmpty(imie) && !script.isEmpty(nazwisko) && !script.isEmpty(kodpocztowy) && !script.isEmpty(miasto) && !script.isEmpty(woj) && !script.isEmpty(powiat) && !script.isEmpty(gmina) && !script.isEmpty(ulica)
+         && !script.isEmpty(ulica) && !script.isEmpty(nrdomu) && !script.isEmpty(nrlokalu) && !script.isEmpty(telefon) && !script.isEmpty(email) && !script.isEmpty(pesel) && !script.isEmpty(nrkonta) && !script.isEmpty(klasa)
+         && !script.isEmpty(klasa) && !script.isEmpty(kierunek) && !script.isEmpty(miejscepraktyk)) {
+            fetch('/test', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            })
+            .then(response => {
+                if (response) { // Sprawdzamy, czy status odpowiedzi jest w zakresie 200-299
+                    console.log('Dane formularza zostały wysłane pomyślnie!');
+                } else {
+                    console.error('Wysłanie danych formularza nie powiodło się.');
+                }
+                console.log(response)
+                console.log(imie, nazwisko);
+            })
+            .catch(error => {
+                console.error('Wystąpił błąd podczas wysyłania danych formularza:', error);
+            });
 
-        window.location.reload();
+            window.location.reload();
+        } else {
+            alert("Uzupełnij brakujące pola!");
+        }
     }
 }
