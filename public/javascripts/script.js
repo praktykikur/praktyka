@@ -36,7 +36,10 @@ const script = {
             if (plecRadio[i].checked) {
                 // Jeśli element jest zaznaczony, pobieramy jego wartość i przerywamy pętlę
                 var selectedValuePlec = plecRadio[i].value;
+                $('.radioGen').css("border-color", "grey");
                 break;
+            } else {
+                $('.radioGen').css("border-color", "red");
             }
         }
 
@@ -45,7 +48,10 @@ const script = {
             if (niepelnosprawnoscRadio[i].checked) {
                 // Jeśli element jest zaznaczony, pobieramy jego wartość i przerywamy pętlę
                 var selectedValueNiepelnosprawnosc = niepelnosprawnoscRadio[i].value;
+                $('.radioDis').css("border-color", "grey");
                 break;
+            } else {
+                $('.radioDis').css("border-color", "red");
             }
         }
 
@@ -75,54 +81,102 @@ const script = {
 
         if (script.isEmpty(imie)) {
             emptyFields.push("Imię");
+            $('#imie').css("border-color", "red");
+        } else {
+            $('#imie').css("border-color", "grey");
         }
         if (script.isEmpty(nazwisko)) {
             emptyFields.push("Nazwisko");
+            $('#nazwisko').css("border-color", "red");
+        } else {
+            $('#nazwisko').css("border-color", "grey");
         }
         if (script.isEmpty(kodpocztowy)) {
             emptyFields.push("Kod pocztowy");
+            $('#kodpocztowy').css("border-color", "red");
+        } else {
+            $('#kodpocztowy').css("border-color", "grey");
         }
         if (script.isEmpty(miasto)) {
             emptyFields.push("Miasto");
+            $('#miasto').css("border-color", "red");
+        } else {
+            $('#miasto').css("border-color", "grey");
         }
         if (script.isEmpty(woj)) {
             emptyFields.push("Województwo");
+            $('#woj').css("border-color", "red");
+        } else {
+            $('#woj').css("border-color", "grey");
         }
         if (script.isEmpty(powiat)) {
             emptyFields.push("Powiat");
+            $('#powiat').css("border-color", "red");
+        } else {
+            $('#powiat').css("border-color", "grey");
         }
         if (script.isEmpty(gmina)) {
             emptyFields.push("Gmina");
+            $('#gmina').css("border-color", "red");
+        } else {
+            $('#gmina').css("border-color", "grey");
         }
         if (script.isEmpty(ulica)) {
             emptyFields.push("Ulica");
+            $('#ulica').css("border-color", "red");
+        } else {
+            $('#ulica').css("border-color", "grey");
         }
         if (script.isEmpty(nrdomu)) {
             emptyFields.push("Numer domu");
+            $('#nrdomu').css("border-color", "red");
+        } else {
+            $('#nrdomu').css("border-color", "grey");
         }
         if (script.isEmpty(nrlokalu)) {
             emptyFields.push("Numer lokalu");
         }
         if (script.isEmpty(telefon)) {
             emptyFields.push("Telefon");
+            $('#telefon').css("border-color", "red");
+        } else {
+            $('#telefon').css("border-color", "grey");
         }
         if (script.isEmpty(email)) {
             emptyFields.push("Email");
+            $('#email').css("border-color", "red");
+        } else {
+            $('#email').css("border-color", "grey");
         }
         if (script.isEmpty(pesel)) {
             emptyFields.push("PESEL");//d
+            $('#pesel').css("border-color", "red");
+        } else {
+            $('#pesel').css("border-color", "grey");
         }
         if (script.isEmpty(nrkonta)) {
             emptyFields.push("Numer konta");
+            $('#rachunek').css("border-color", "red");
+        } else {
+            $('#rachunek').css("border-color", "grey");
         }
         if (script.isEmpty(klasa)) {
             emptyFields.push("Klasa");
+            $('#klasa').css("border-color", "red");
+        } else {
+            $('#klasa').css("border-color", "grey");
         }
         if (script.isEmpty(kierunek)) {
             emptyFields.push("Kierunek zawodowy");
+            $('#kierunek').css("border-color", "red");
+        } else {
+            $('#kierunek').css("border-color", "grey");
         }
         if (script.isEmpty(miejscepraktyk)) {
             emptyFields.push("Miejsce praktyk zawodowych");
+            $('#praktyki').css("border-color", "red");
+        } else {
+            $('#praktyki').css("border-color", "grey");
         }
 
         if (emptyFields.length > 0) {
@@ -160,5 +214,5 @@ const script = {
             }
             }
             document.getElementById("formId").reset();
-        }
     }
+}
