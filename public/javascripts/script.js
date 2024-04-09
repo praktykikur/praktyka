@@ -137,6 +137,12 @@ const script = {
                 alert("Zaznacz wszystkie checkboxy");
             }
             else {
+                const inputFields = document.querySelectorAll('input[type="text"], input[type="email"], input[type="number"], input[type="checkbox"], input[type="radio"]');
+                inputFields.forEach(input => {
+                    input.value = '';
+                    input.checked = false;
+                });
+
                 fetch('/test', {
                     method: 'POST',
                     headers: {
@@ -156,8 +162,6 @@ const script = {
                 .catch(error => {
                     console.error('Wystąpił błąd podczas wysyłania danych formularza:', error);
                 });
-
-                window.location.reload();
             }
             }
         }
