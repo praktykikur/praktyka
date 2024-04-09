@@ -137,12 +137,6 @@ const script = {
                 alert("Zaznacz wszystkie checkboxy");
             }
             else {
-                const inputFields = document.querySelectorAll('input[type="text"], input[type="email"], input[type="number"], input[type="checkbox"], input[type="radio"]');
-                inputFields.forEach(input => {
-                    input.value = '';
-                    input.checked = false;
-                });
-
                 fetch('/test', {
                     method: 'POST',
                     headers: {
@@ -153,6 +147,7 @@ const script = {
                 .then(response => {
                     if (response) { // Sprawdzamy, czy status odpowiedzi jest w zakresie 200-299
                         console.log('Dane formularza zostały wysłane pomyślnie!');
+                        $('#notification').fadeIn().delay(3000).fadeOut();
                     } else {
                         console.error('Wysłanie danych formularza nie powiodło się.');
                     }
