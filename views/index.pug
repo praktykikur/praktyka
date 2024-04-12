@@ -1,6 +1,6 @@
 extends layout
-
-block content
+//ok
+block content 
   h1 Formularz zgłoszeniowy z zakresem danych wymaganych do projektów EFS+ i deklaracją uczestnictwa w projekcie
   div(class="text-start")
     h7(class="text-start") Jeśli chcesz wziąć udział w stażach realizowanych w projekcie    
@@ -17,12 +17,16 @@ block content
         label(class="text-danger") *
         div(class="forminput")
           input(type="text" name="imie" class="form-control" required)
+        div
+          input(type="text" name="imie" id="imie" class="form-control" required)
 
       div(class="col-xs-1 p-3")
         label(class="form-label text-start fw-bold") Nazwisko
         label(class="text-danger") *
         div(class="forminput")
           input(type="text" name="nazwisko" class="form-control" required)
+        div
+          input(type="text" name="nazwisko" id="nazwisko" class="form-control" required)
 
       div(class="d-flex flex-row")
         div(class="col-xs-1 p-3")
@@ -30,30 +34,40 @@ block content
           label(class="text-danger") *
           div(class="forminput")
             input(type="text" name="kodpocztowy" pattern="^\s*?\d{5}(?:[-\s]\d{4})?\s*?$" class="form-control")
+          div
+            input(type="text" name="kodpocztowy" id="kodpocztowy" pattern="^\s*?\d{5}(?:[-\s]\d{4})?\s*?$" class="form-control")
 
         div(class="col-xs-1 p-3")
           label(class="form-label text-start fw-bold") Miejscowość
           label(class="text-danger") *
           div(class="forminput")
             input(type="text" name="miasto" class="form-control")
+          div
+            input(type="text" name="miasto" id="miasto" class="form-control")
       
       div(class="col-xs-1 p-3")
         label(class="form-label text-start fw-bold") Województwo
         label(class="text-danger") *
         div(class="forminput")
           input(type="text" name="woj" class="form-control")
+        div
+          input(type="text" name="woj" id="woj" class="form-control")
       
       div(class="col-xs-1 p-3")
         label(class="form-label text-start fw-bold") Powiat
         label(class="text-danger") *
         div(class="forminput")
           input(type="text" name="powiat" class="form-control")
+        div
+          input(type="text" name="powiat" id="powiat" class="form-control")
       
       div(class="col-xs-1 p-3")
         label(class="form-label text-start fw-bold") Gmina
         label(class="text-danger") *
         div(class="forminput")
           input(type="text" name="gmina" class="form-control")
+        div
+          input(type="text" name="gmina" id="gmina" class="form-control")
       
       div(class="d-flex flex-row")
         div(class="col-xs-1 p-3")
@@ -65,6 +79,12 @@ block content
           label(class="form-label text-start fw-bold") Nr domu
           div(class="forminput")
             input(type="number" name="nrdomu" class="form-control")
+          div
+            input(type="text" name="ulica" id="ulica" class="form-control")
+        div(class="col-xs-1 p-3")
+          label(class="form-label text-start fw-bold") Nr domu
+          div
+            input(type="number" name="nrdomu" id="nrdomu" class="form-control")
         div(class="col-xs-1 p-3")
           label(class="form-label text-start fw-bold") Nr lokalu
           div
@@ -75,30 +95,40 @@ block content
         label(class="text-danger") *
         div(class="forminput")
           input(type="number" name="telefon" class="form-control" max-length="9")
+        div
+          input(type="number" name="telefon" id="telefon" class="form-control" max-length="9")
       
       div(class="col-xs-1 p-3")
         label(class="form-label text-start fw-bold") E-mail
         label(class="text-danger") *
         div(class="forminput")
           input(type="text" name="email" class="form-control")
+        div
+          input(type="text" name="email" id="email" class="form-control")
       
       div(class="col-xs-1 p-3")
         label(class="form-label text-start fw-bold") PESEL
         label(class="text-danger") *
         div(class="forminput")
           input(type="number" name="pesel" class="form-control")
+        div
+          input(type="number" name="pesel" id="pesel" class="form-control")
       
       div(class="col-xs-1 p-3")
         label(class="form-label text-start fw-bold") Numer rachunku bankowego
         label(class="text-danger") *
         div(class="forminput")
           input(type="text" name="rachunek" class="form-control")
+        div
+          input(type="text" name="rachunek" id="rachunek" class="form-control")
 
       div(class="col-xs-1 p-3")
         label(class="form-label text-start  fw-bold") Klasa
         label(class="text-danger") *
         div(class="forminput")
           input(type="text" name="klasa" class="form-control")
+        div
+          input(type="text" name="klasa" id="klasa" class="form-control")
 
       div(class="col-xs-1 p-3")
         label(class="form-label text-start fw-bold") Kierunek zawodowy
@@ -107,6 +137,8 @@ block content
           h7(class="fst-italic") np.: technik informatyk, technik logistyk, technik mechatronik, technik analityk, itp.
         div(class="forminput")
           input(type="text" name="kierunek_zaw" class="form-control")
+        div
+          input(type="text" name="kierunek_zaw" id="kierunek" class="form-control")
 
       div(class="col-xs-1 p-3")
         label(class="form-label text-start fw-bold") Proponowane miejsce stażu
@@ -115,24 +147,28 @@ block content
           h7(class="fst-italic") dokładna nazwa firmy lub instytucji 
         div(class="forminput")
           input(type="text" name="miejsce_praktyk" class="form-control")
+        div
+          input(type="text" name="miejsce_praktyk" id="praktyki" class="form-control")
 
       label(class="fw-bold p-1") Płeć
       label(class="text-danger") *
       div(class="col-xs-1 p-3")
         div(class="form-check form-input")
           input(class="form-check-input" type="radio" name="radioGen" value="k")
+        div(class="form-check")
+          input(class="form-check-input" type="radio" name="radioGen" class="radioGen" value="k")
           label(class="form-check-label" for="flexRadioDefault1")
           h7 Kobieta
         div(class="form-check")
-          input(class="form-check-input" type="radio" name="radioGen" value="m")
+          input(class="form-check-input" type="radio" name="radioGen" class="radioGen" value="m")
           label(class="form-check-label" for="flexRadioDefault1")
           h7 Mężczyzna
         div(class="form-check")
-          input(class="form-check-input" type="radio" name="radioGen" value="inna")
+          input(class="form-check-input" type="radio" name="radioGen" class="radioGen" value="inna")
           label(class="form-check-label" for="flexRadioDefault1")
           h7 Inna
         div(class="form-check")
-          input(class="form-check-input" type="radio" name="radioGen" value="niepodaje")
+          input(class="form-check-input" type="radio" name="radioGen" class="radioGen" value="niepodaje")
           label(class="form-check-label" for="flexRadioDefault1")
           h7 Wolę nie podawać
 
@@ -142,15 +178,15 @@ block content
         h7(class="fst-italic") osoby z niepełnosprawnością będą musiały donieść stosowne orzeczenie do Biura Projektu
       div(class="col-xs-1 p-3 form-input")
         div(class="form-check")
-          input(class="form-check-input" type="radio" name="radioDis" value="tak")
+          input(class="form-check-input" type="radio" name="radioDis" class="radioDis" value="tak")
           label(class="form-check-label" for="flexRadioDefault2")
           h7 Tak
         div(class="form-check")
-          input(class="form-check-input" type="radio" name="radioDis" value="nie")
+          input(class="form-check-input" type="radio" name="radioDis" class="radioDis" value="nie")
           label(class="form-check-label" for="flexRadioDefault2")
           h7 Nie
         div(class="form-check")
-          input(class="form-check-input" type="radio" name="radioDis" value="niepodaje")
+          input(class="form-check-input" type="radio" name="radioDis" class="radioDis" value="niepodaje")
           label(class="form-check-label" for="flexRadioDefault2")
           h7 Odmawiam podania informacji
 
