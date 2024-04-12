@@ -1,5 +1,6 @@
 var mysql = require("mysql");
 var mailController = require("./controllers/mail.controller");
+const send = require("./controllers/mail.controller");
 
 var connection = mysql.createConnection({
     host: "mysql16.mydevil.net",
@@ -10,7 +11,7 @@ var connection = mysql.createConnection({
 
 module.exports = {
     test: async (req, cb) => {
-        await mailController.send(req);
+        // await mailController.send(req);
         connection.connect(function(){
             console.log("Connected");
         
@@ -39,6 +40,7 @@ module.exports = {
                     console.log("NIE OK", err);
                     return cb(err);
                 }
+                send();
                 return cb("ok")
             })
         });

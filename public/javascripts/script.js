@@ -28,9 +28,6 @@ const script = {
         const c5 = document.querySelector("input[class='c5']").checked;
         const c6 = document.querySelector("input[class='c6']").checked;
 
-        
-        
-
         var plecRadio = document.getElementsByName('radioGen')
         for (var i = 0; i < 4; i++) {
             if (plecRadio[i].checked) {
